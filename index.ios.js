@@ -4,21 +4,20 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
-  Platform,
-  StatusBar
+  Image
 } from 'react-native';
 
 // 导入自定义控件
 import Header from './common/Header';
 import TabBar from './common/TabBar';
+import Swiper from './common/Swiper';
 
 class LSH123 extends Component {
   render() {
     return (
       <View style={[styles.container]}>
         <Header />
-        <View style={[styles.slider]}></View>
+        <Swiper />
         <TabBar />
       </View>
     );
