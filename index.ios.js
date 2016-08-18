@@ -12,12 +12,15 @@ import Header from './common/Header';
 import TabBar from './common/TabBar';
 import Swiper from './common/Swiper';
 
+import MenuButtons from './home/MenuButtons';
+
 class LSH123 extends Component {
   render() {
     return (
       <View style={[styles.container]}>
         <Header />
         <Swiper />
+        <MenuButtons />
         <TabBar />
       </View>
     );
@@ -26,8 +29,7 @@ class LSH123 extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#ff8347'
+    flex: 1
   }
 });
 

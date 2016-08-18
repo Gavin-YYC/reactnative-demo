@@ -37,12 +37,13 @@ export default class TabBar extends Component {
   }
   // 创建tab
   renderTab(list) {
-    return list.map((item)=>this.renderItem(item))
+    return list.map((item, index)=>this.renderItem(item, index))
   }
   // 创建每个item
-  renderItem(item){
+  renderItem(item, index){
     return (
       <TabNavigator.Item
+        key={index}
         selected={this.state.selectedTab === item.title}
         title={item.title}
         renderIcon={() => <Image source={ item.img } style={[styles.tabIcon]} />}
