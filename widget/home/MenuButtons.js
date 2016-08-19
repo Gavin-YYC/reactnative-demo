@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import MenuButton from '../Component/MenuButton';
+import MenuButton from '../../Component/MenuButton';
 
 // 数据模拟
 const MENU_CONFIG = [
   {
-    icon: require('../images/cate/cate1.png'),
+    icon: require('../../images/cate/cate1.png'),
     text: '饮料／水'
   }, {
-    icon: require('../images/cate/cate2.png'),
+    icon: require('../../images/cate/cate2.png'),
     text: '方便速食'
   }, {
-    icon: require('../images/cate/cate3.png'),
+    icon: require('../../images/cate/cate3.png'),
     text: '酒类'
   }, {
-    icon: require('../images/cate/cate4.png'),
+    icon: require('../../images/cate/cate4.png'),
     text: '糖果休食'
   }, {
-    icon: require('../images/cate/cate5.png'),
+    icon: require('../../images/cate/cate5.png'),
     text: '调料干货'
   }, {
-    icon: require('../images/cate/cate6.png'),
+    icon: require('../../images/cate/cate6.png'),
     text: '坚果炒货'
   }, {
-    icon: require('../images/cate/cate7.png'),
+    icon: require('../../images/cate/cate7.png'),
     text: '调味酱'
   }, {
-    icon: require('../images/cate/cate8.png'),
+    icon: require('../../images/cate/cate8.png'),
     text: '纸制品'
   }
 ];

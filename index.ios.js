@@ -11,8 +11,9 @@ import {
 import Header from './common/Header';
 import TabBar from './common/TabBar';
 import Swiper from './common/Swiper';
+import UIItemListView from './Component/UIItemListView/UIItemListView';
 
-import MenuButtons from './home/MenuButtons';
+import MenuButtons from './widget/home/MenuButtons';
 
 class LSH123 extends Component {
   render() {
@@ -21,6 +22,9 @@ class LSH123 extends Component {
         <Header />
         <Swiper />
         <MenuButtons />
+        <View style={{flex: 1, backgroundColor: '#f0f0f0'}}>
+          <UIItemListView />
+        </View>
         <TabBar />
       </View>
     );
