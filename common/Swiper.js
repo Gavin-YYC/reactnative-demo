@@ -7,6 +7,8 @@ import {
 } from 'react-native';
 import ViewPager from 'react-native-viewpager';
 
+import Util from './Util';
+
 // 获取设备的宽度
 let deviceWidth = Dimensions.get('window').width;
 
@@ -26,6 +28,10 @@ export default class Swiper extends Component {
     this.state = {
       dataSource: dataSource.cloneWithPages( BANNER_IMGS )
     }
+  }
+
+  componentWillMount() {
+    let that = this;
   }
 
   // 渲染每一帧
