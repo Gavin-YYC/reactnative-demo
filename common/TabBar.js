@@ -6,7 +6,9 @@ import {
   Image
 } from 'react-native'
 // 引入底部导航模块
-import TabNavigator from 'react-native-tab-navigator'
+import TabNavigator from 'react-native-tab-navigator';
+// 导入子模块
+import HomeView from '../widget/home/home';
 
 const ImgRoot = '../images/';
 
@@ -56,11 +58,15 @@ export default class TabBar extends Component {
   }
   // 创建子视图
   createChildView(tab){
-    return (
-      <View style={{flex:1,backgroundColor:'#00baff',alignItems:'center',justifyContent:'center'}}>
-        <Text style={{fontSize:22}}>{tab}</Text>
-      </View>
-    )
+    if ( tab == 'home' ) {
+      return <HomeView />
+    } else {
+      return (
+        <View style={{flex:1,backgroundColor:'#00baff',alignItems:'center',justifyContent:'center'}}>
+          <Text style={{fontSize:22}}>{tab}</Text>
+        </View>
+      )
+    }
   }
   // 生成菜单
   render(){

@@ -7,24 +7,13 @@ import {
   Image
 } from 'react-native';
 
-// 导入自定义控件
-import Header from './common/Header';
+// 导入底部导航
 import TabBar from './common/TabBar';
-import Swiper from './common/Swiper';
-import UIItemListView from './Component/UIItemListView/UIItemListView';
-
-import MenuButtons from './widget/home/MenuButtons';
 
 class LSH123 extends Component {
   render() {
     return (
       <View style={[styles.container]}>
-        <Header />
-        <Swiper />
-        <MenuButtons />
-        <View style={{flex: 1, backgroundColor: '#f0f0f0'}}>
-          <UIItemListView />
-        </View>
         <TabBar />
       </View>
     );

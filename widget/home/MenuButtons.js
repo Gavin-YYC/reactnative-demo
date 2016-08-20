@@ -32,10 +32,14 @@ const MENU_CONFIG = [
 ];
 
 export default class MenuButtons extends Component {
+  constructor( props ) {
+    super( props );
+  }
+
   render() {
     return (
       // 这里不知道如何动态的生成两行四列的布局了。。。后期学习了在改，现在先这样做
-      <View>
+      <View style={this.props.style}>
         <View style={{flexDirection: 'row'}}>
           { this.renderMenus( MENU_CONFIG, 1, 4 ) }
         </View>

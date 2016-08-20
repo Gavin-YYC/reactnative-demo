@@ -43,6 +43,7 @@ export default {
       .then((responseText) => {
         callback(JSON.parse(responseText));
       }).catch((err) => {
+        console.log( err );
         alert( err );
       });
   }
