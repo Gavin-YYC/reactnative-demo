@@ -15,11 +15,20 @@ export default class UIItemListView extends Component {
   // 继承父元素的constructor
   constructor( props ) {
     super( props );
-    console.log( props );
-    let modelCart = new ModelCart( this.props.itemList );
+    this.modelCart = new ModelCart( this.props.itemList );
     this.state = {
       count: 0
     }
+  }
+
+  componentDidMount() {
+    let that = this;
+    let skuId = this.props.itemList.sku_info.sku_id;
+    this.modelCart.getCurrentCount( skuId, ( count ) => {
+      that.setState({
+        count: count
+      })
+    })
   }
 
   // 设置需要传递的默认属性
@@ -27,16 +36,18 @@ export default class UIItemListView extends Component {
   static propTypes: {}
 
   // 减法计算
-  _onSubstact( moq ) {
+  _onSubstact( item, moq ) {
     if ( this.state.count > 0 ) {
+      this.modelCart.sub( item, moq );
       this.setState({
         count: this.state.count - 1
-      })
+      });
     }
   }
 
   // 加法计算
-  _onAdd( moq ) {
+  _onAdd( item, moq ) {
+    this.modelCart.add( item, moq );
     this.setState({ count: this.state.count + 1 })
   }
 
@@ -90,11 +101,11 @@ export default class UIItemListView extends Component {
     let showMoq = moq > 1;
     return (
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <TouchableWithoutFeedback onPress={(moq) => this._onSubstact(moq)}>
+        <TouchableWithoutFeedback onPress={() => this._onSubstact( item.sku_info, moq )}>
           <Image style={[styles.operaBtn, showMoq ? styles.hidden : {}]} source={require('../images/btn/sub.png')} />
         </TouchableWithoutFeedback>
         {this._renderCount( showMoq, item )}
-        <TouchableWithoutFeedback onPress={(moq) => this._onAdd(moq)}>
+        <TouchableWithoutFeedback onPress={() => this._onAdd( item.sku_info, moq )}>
           <Image style={styles.operaBtn} source={require('../images/btn/add.png')} />
         </TouchableWithoutFeedback>
       </View>
