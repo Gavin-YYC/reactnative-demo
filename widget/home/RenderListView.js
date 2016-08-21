@@ -11,7 +11,7 @@ import {
 // 工具模块
 import Util from '../../common/Util';
 // 列表组件
-import UIItemListView from '../../Component/UIItemListView/UIItemListView';
+import UIItemListView from '../../Component/UIItemListView';
 
 // 进度条适配
 var ProgressBar = ProgressBarAndroid;
@@ -40,7 +40,7 @@ export default class RenderListView extends Component {
 
   _rendeItemRow( item ) {
     return(
-      <UIItemListView />
+      <UIItemListView itemList={item} />
     )
   }
 
